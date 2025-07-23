@@ -15,7 +15,7 @@ export async function httpClient(endpoint:string, data:object){
     const res=await axios.post(url,body,{
         headers:{
             "Content-Type":"application/json",
-            "User-Agent": "com.google.android.youtube/18.13.35 (Linux; U; Android 11)"
+            "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
         },
         
     });

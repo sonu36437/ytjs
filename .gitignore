@@ -1,5 +1,8 @@
 # Node modules
 node_modules/
+base.js/
+index.js/
+
 
 # Build output
 dist/
