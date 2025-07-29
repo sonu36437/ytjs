@@ -20,7 +20,11 @@ export async function searchResponseParser(response: any):Promise<{ results: Sea
   let  continuationToken: string | undefined;
 
 
+  
   const sections = response.contents?.twoColumnSearchResultsRenderer?.primaryContents?.sectionListRenderer?.contents || [];
+    // const sections = response.contents?.sectionListRenderer?.contents || [];
+  
+  
 
   for (const section of sections) {
     const items = section.itemSectionRenderer?.contents || [];
