@@ -7,6 +7,7 @@ A lightweight wrapper around YouTube's internal API that allows you to:
 - 🎵 Get direct streaming URLs for video playback
 
 ---
+<hr>
 
 ## 📦 Installation
 
@@ -34,19 +35,24 @@ const yt = new Innertube();
 
 ```
 
-***pageination***
+***pagination***
 ```
 yt.fectchSearchContinuation("add continutation token here"):<promise>
 ```
-***source***
-```
+***Source***
+````
+
 yt.player("videoId")<promise>
 
 
 
-```
-**note**
 
-there is not proxies been used here youtube may blacklist if many request is made , use this on client side to avoid blacklisting 
+````
+**Note:**
+
+
+there is no proxy or ip rotation has  been used here youtube may blacklist if many request is made , use this on client side to avoid blacklisting 
+
+
 
 

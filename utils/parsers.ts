@@ -1,4 +1,5 @@
 import { extractContinuationToken } from "./helper/continuationTokenExtractor";
+import{convertToSeconds} from './helper/convetIntoSeconds'
 
 export type Thumbnail = {
   url: string;
@@ -12,6 +13,9 @@ export type SearchResult = {
   description: string;
   id: string;
   artists?: string;
+  duration?:string
+  durationText?:string
+ durationInSeconds?:number
 
 };
 
@@ -40,7 +44,9 @@ export async function searchResponseParser(response: any):Promise<{ results: Sea
         description: video.descriptionSnippet?.runs?.map((r: any) => r.text).join(" ") || "",
         id: video.videoId,
         artists: video.ownerText?.runs?.[0]?.text || "",
-      
+        duration:video?.lengthText?.simpleText||"",   
+        durationText:video?.lengthText?.accessibility?.accessibilityData?.label||"" , 
+        durationInSeconds:convertToSeconds(video?.lengthText?.simpleText)||0,
       });
     }
   }
@@ -72,6 +78,9 @@ export function searchContinuationParser(
           video.descriptionSnippet?.runs?.map((r: any) => r.text).join(" ") || "",
         id: video.videoId,
         artists: video.ownerText?.runs?.[0]?.text || "",
+        duration:video?.lengthText?.simpleText||"",   
+        durationText:video?.lengthText?.accessibility?.accessibilityData?.label||""  ,
+        durationInSeconds:convertToSeconds(video?.lengthText?.simpleText)||0,
       });
     }
   }
