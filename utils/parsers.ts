@@ -27,6 +27,7 @@ export async function searchResponseParser(response: any):Promise<{ results: Sea
   
   const sections = response.contents?.twoColumnSearchResultsRenderer?.primaryContents?.sectionListRenderer?.contents || [];
     // const sections = response.contents?.sectionListRenderer?.contents || [];
+    
   
   
 

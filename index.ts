@@ -1,19 +1,40 @@
+import InnertubeSession from "./modules/Session";
+import { SearchResult } from "./utils/parsers";
 
-import { fetchSearchContinuation } from "./modules/continuation";
-import { fetchStreamingUrl } from "./modules/player";
-import { search } from "./modules/search";
- export  class Innertube{
-  public search=search;
-  public fectchSearchContinuation=fetchSearchContinuation;
-  public player=fetchStreamingUrl;
+export class Innertube {
+  private session!: InnertubeSession;
 
+  private haveSession: boolean = false;
+  private async getSession(){
+    if(!this.haveSession){
+      this.session= await InnertubeSession.getInstance();
+      this.haveSession=!this.haveSession;
+    
+    }
+
+
+  }
+
+public  async search(query: string) {
+    if(!this.haveSession){
+      await this.getSession();
+    }
+ 
+    return this.session.searchQuery(query);
+  }
+
+public  async player(videoId: string) {
+    if(!this.haveSession){
+      await this.getSession();
+    }
+    return this.session.fetchStreamingUrl(videoId);
+  }
+
+  async fectchSearchContinuation(token:string):Promise<{ results: SearchResult[], continuationToken?: string }>{
+    if(!this.haveSession){
+      await this.getSession();
+    }
+    return this.session.fetchSearchContinuation(token);
+  }
+ 
 }
-
-
-
-
-
-
-
-
-

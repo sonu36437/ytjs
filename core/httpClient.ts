@@ -1,13 +1,38 @@
 import axios from "axios";
 import { urls ,apiKey,YoutubeClientContext,YoutubeAndroidClientContext} from "./constants";
+import { YouTubeRequestPayload } from "../types/context";
 
 
-export async function httpClient(endpoint:string, data:object){
- const url = `${urls.Baseurl}/${endpoint}?key=${apiKey}`
+interface QueryData {
+  videoId?:string,
+  query?:string,
+  continuation?:string
 
+}
+
+
+export async function httpClient(endpoint:string, data:QueryData,context:YouTubeRequestPayload){
+ const url = `${urls.Baseurl}/${endpoint}?prettyPrint=false`
+ console.log(context);
  
+ 
+ 
+
+  if(endpoint==='search' && data.query){
+    let formattedQuery = data?.query.trim().split(" ").filter(Boolean).join("+");
+    context.client.clientName="WEB"
+    context.client.clientVersion="2.20250710.09.00"
+    context.client.originalUrl=`https://www.youtube.com/results?search_query=${formattedQuery}`
+  }
+  if(endpoint==='player'){
+    context.client.clientName="ANDROID"
+    context.client.clientVersion="19.35.36"
+  }
+  console.log("this is the context from http client ",context);
+  
+ console.log(url);
     const body= {
-        context:endpoint==="player"?YoutubeAndroidClientContext:YoutubeClientContext,
+        context,
         ...data
     };
     console.log(body);
@@ -22,6 +47,7 @@ export async function httpClient(endpoint:string, data:object){
     });
     
     return res.data;
+ 
 
 
 }

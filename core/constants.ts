@@ -18,5 +18,9 @@ export const  YoutubeAndroidClientContext={
     gl: "US"
     }
 }
+export const mobileHeader = {
+  "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_7_10 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1,gzip(gfe)",
+ 
+};
 
  export const apiKey:string="AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8"
