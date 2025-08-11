@@ -7,7 +7,18 @@
     "build": "tsc",
     "start": "node dist/index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "youtube api",
+    "youtube search",
+    "youtube downloader",
+    "youtube streaming url",
+    "youtube nodejs",
+    "youtube react native",
+    "youtube pagination",
+    "youtube innertube",
+    "youtube api wrapper",
+    "node youtube"
+  ],
   "author": "",
   "license": "ISC",
   "description": "",

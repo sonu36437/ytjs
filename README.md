@@ -2,9 +2,10 @@
 
 A lightweight wrapper around YouTube's internal API that allows you to:
 
-- 🔍 Search for YouTube videos
-- 🔁 Fetch continuation tokens (for paginated search results)
-- 🎵 Get direct streaming URLs for video playback
+- Search for YouTube videos
+- Fetch continuation tokens (for paginated search results)
+- Get direct streaming URLs for video playback
+- No Api key is needed
 
 ---
 <hr>
@@ -17,7 +18,10 @@ Clone the repository or add the files to your project manually:
 git clone https://github.com/sonu36347/ytjs
 
 ```
-
+**or**
+```
+npm install onlynativetube@latest
+```
 
 ***usage***
 ```
@@ -49,9 +53,7 @@ yt.player("videoId")<promise>
 
 ````
 **Note:**
-
-
-there is no proxy or ip rotation has  been used here youtube may blacklist if many request is made , use this on client side to avoid blacklisting 
+All the previous versions are not working.
 
 
 
