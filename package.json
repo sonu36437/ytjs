@@ -19,9 +19,15 @@
     "youtube api wrapper",
     "node youtube"
   ],
-  "author": "",
+  "author": "sonu36437 sonu-kumar sonu36437@gmail.com",
+
   "license": "ISC",
-  "description": "",
+  "description": "OnlyNativeTube - A Node.js and React Native YouTube InnerTube API wrapper for video search, streaming URLs, and continuation tokens.",
+  "homepage": "https://github.com/sonu36347/ytjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sonu36437/ytjs"
+  },
   "dependencies": {
     "axios": "^1.10.0"
   },

@@ -1,4 +1,8 @@
-# 🎥 InnerTube YouTube API Wrapper
+# OnlyNativeTube - YouTube InnerTube API Wrapper for Node.js & React Native
+
+**OnlyNativeTube** is a lightweight YouTube API wrapper built for **Node.js** and **React Native**. It lets you search videos, fetch continuation tokens, and retrieve direct streaming URLs using YouTube's **InnerTube API**.
+📦 [View on NPM](https://www.npmjs.com/package/onlynativetube)  
+💻 [GitHub Repository](https://github.com/sonu36437/ytjs)
 
 A lightweight wrapper around YouTube's internal API that allows you to:
 
