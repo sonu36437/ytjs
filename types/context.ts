@@ -55,6 +55,7 @@ export interface YouTubeRequestPayload {
     supportXhr?: boolean;
   };
   racyCheckOk?: boolean;
+  playlistId?:string;
   serviceIntegrityDimensions?: Record<string, unknown>;
   videoId?: string;
 }

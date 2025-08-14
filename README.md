@@ -56,6 +56,15 @@ yt.player("videoId")<promise>
 
 
 ````
+**get similar playist**
+```
+// first parameter is videoId and second one is playlist id , you goona get playlist id when you query  for search
+
+yt.fetchSimilarSongsOrPlaylist( 'qfSrPyX5Svk' ,'RDVGiO8AJ9gE8').then(d=>{
+    console.log(d)
+})
+```
+
 **Note:**
 All the previous versions are not working.
 

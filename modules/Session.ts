@@ -3,7 +3,7 @@ import { InferencePriority } from 'typescript';
 import { mobileHeader } from '../core/constants';
 import { YouTubeRequestPayload } from './../types/context';
 import { httpClient } from "../core/httpClient"
-import { searchContinuationParser, searchResponseParser } from "../utils/parsers"
+import {fetchNextParser, searchContinuationParser, searchResponseParser} from "../utils/parsers"
 import { extractContinuationToken } from '../utils/helper/continuationTokenExtractor';
 
 class InnertubeSession {
@@ -119,9 +119,7 @@ class InnertubeSession {
 
 
     public async fetchSearchContinuation(token: string) {
-        const response = await httpClient("search", { continuation: token }, this.context
-
-        );
+        const response = await httpClient("search", { continuation: token }, this.context);
 
 
         const results = searchContinuationParser(response);
@@ -133,8 +131,18 @@ class InnertubeSession {
 
 
     }
+    // for songs
+    public async getSimlarsongs(videoid:string ,playlistId?:string){
+       const res = await httpClient("next",{videoId:videoid,playlistId:playlistId},this.context);
+        console.log(res.contents.twoColumnWatchNextResults)
+       const results=fetchNextParser(res);
+       return results;
+
+
+    }
 
 
 }
+
 
 export default InnertubeSession;

@@ -1,14 +1,18 @@
-import {Innertube }from 'onlynativetube'
+import {Innertube} from '../dist/index.js'
 import fs from 'fs'
 const yt= new Innertube();
-yt.search("renuka panwar").then(d=>{
-    console.log(d);
-    
+// yt.search("ruchika jangid songs").then(d=>{
+//     console.log(d);
+//
+// })
+
+
+
+yt.fetchSimilarSongsOrPlaylist( 'qfSrPyX5Svk' ,'RDVGiO8AJ9gE8').then(d=>{
+    console.log(d)
 })
-yt.search("sad song").then(d=>{
-    console.log(d);
-    
-})
+
+
 
 
 

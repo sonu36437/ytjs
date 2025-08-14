@@ -6,7 +6,8 @@ import { YouTubeRequestPayload } from "../types/context";
 interface QueryData {
   videoId?:string,
   query?:string,
-  continuation?:string
+  continuation?:string,
+    playlistId?:string,
 
 }
 
@@ -14,9 +15,12 @@ interface QueryData {
 export async function httpClient(endpoint:string, data:QueryData,context:YouTubeRequestPayload){
  const url = `${urls.Baseurl}/${endpoint}?prettyPrint=false`
  console.log(context);
- 
- 
- 
+
+ if(endpoint==='next'){
+     context.client.clientName="WEB"
+     context.client.clientVersion="2.20250710.09.00"
+ }
+
 
   if(endpoint==='search' && data.query){
     let formattedQuery = data?.query.trim().split(" ").filter(Boolean).join("+");
@@ -29,25 +33,25 @@ export async function httpClient(endpoint:string, data:QueryData,context:YouTube
     context.client.clientVersion="19.35.36"
   }
   console.log("this is the context from http client ",context);
-  
+
  console.log(url);
     const body= {
         context,
         ...data
     };
     console.log(body);
-    
+
     const res=await axios.post(url,body,{
         headers:{
             "Content-Type":"application/json",
             "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36"
         },
-        
-        
+
+
     });
-    
+
     return res.data;
- 
+
 
 
 }
