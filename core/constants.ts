@@ -19,7 +19,7 @@ export const  YoutubeAndroidClientContext={
     }
 }
 export const mobileHeader = {
-  "User-Agent": "Mozilla/5.0 (iPad; CPU OS 16_7_10 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1,gzip(gfe)",
+  "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/530.30 (KHTML, like Gecko) Chrome/88.2.3077.120 Safari/538.31",
  
 };
 

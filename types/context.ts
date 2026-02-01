@@ -14,6 +14,8 @@ export interface YouTubeRequestPayload {
     clientName: string;
     clientScreen: string;
     clientVersion: string;
+    androidSdkVersion?:number;
+   
     acceptHeader: string;
     configInfo?: Record<string, unknown>;
     deviceExperimentId?: string;

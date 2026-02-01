@@ -64,6 +64,7 @@ class InnertubeSession {
 
             const instance = new InnertubeSession();
             instance.context = await this.fetchInnertubeContext();
+
             InnertubeSession.instance = instance;
         }
 
@@ -109,7 +110,7 @@ class InnertubeSession {
             results.push(data);
 
         }
-        console.log("the result is ", results);
+      
 
         return results;
 
